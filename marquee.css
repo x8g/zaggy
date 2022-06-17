@@ -1,0 +1,158 @@
+@font-face {
+  font-family: derk;
+  src: url(derk.otf);
+}
+  html {
+  cursor: url('../images/cursor.png'), default;
+  font-family: mono;
+}
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: monospace;
+
+}
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(17, 17, 17);
+}
+.back {
+  width: 100%;
+}
+#overlay-toggle {
+  position:absolute;
+  display: none;
+}
+.overlay {
+  z-index: 1;
+  background-color: black;
+}
+.overlay label {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vw;
+  color: rgb(255, 255, 255);
+  font-size: 2.5rem;
+  user-select: none;
+  cursor: url("..cursor.png"), default;
+}
+.no-hover {
+  display: block;
+}
+.hover {
+  display: none;
+}
+.fullscreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.text-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 25px;
+  margin-left: 25px;
+  user-select: none;
+}
+.socials {
+  text-align: center;
+  user-select: none;
+}
+.bg-video {
+  z-index: -2;
+}
+body {
+  font-family: derk; text-shadow: 0 0 0.40em #fff;
+  background-color:#000!important;
+  color:#fff!important;
+}
+a {
+  cursor: url("..cursor.png"), default;
+  text-decoration:wavy;
+  color:rgb(255, 255, 255)!important;
+  text-shadow: 0 0 0.40em #98c4fa;
+}
+a:hover {
+  transition:.4s!important;
+  color:rgb(152, 196, 250)!important;
+  text-shadow: 0 0 0.40em rgb(152, 196, 250);
+}
+span::before {
+  content:'\A';
+  white-space:pre
+}
+.fullscreen a {
+  color:#fff!important;
+  text-shadow: 0 0 0.40em #98c4fa;
+}
+.fullscreen a:hover {
+  transition:.4s!important;
+  color:rgb(152, 196, 250)!important;
+  text-shadow: 0 0 0.40em rgb(152, 196, 250);
+}
+#center {
+  position:absolute;
+  text-align: center;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  -moz-transform:translate(-50%,-50%);
+  -ms-transform:translate(-50%,-50%);
+  -o-transform:translate(-50%,-50%)
+}
+#overlay-toggle:checked ~ .overlay {
+  animation-fill-mode: forwards;
+  animation-name: fade, hide;
+  animation-delay: 0s, 600ms;
+  animation-duration: 600ms, 1ms;
+}
+#overlay-toggle:checked ~ .overlay label {
+  animation-fill-mode: forwards;
+  animation-name: fade;
+  animation-delay: 0s;
+  animation-duration: 500ms;
+}
+#pattern {
+  background: transparent url('..dot-overlay.png') repeat 0 0;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  opacity: 1;
+}
+#pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+@media(hover: hover) {
+  .hover {
+    display: block;
+  }
+  .no-hover {
+    display: none;
+  }
+}
+@keyframes fade{
+  to {
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  to {
+    visibility: hidden;
+  }
+}
